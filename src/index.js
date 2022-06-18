@@ -112,7 +112,7 @@ const XMLHttpRequestShim = class XMLHttpRequest extends EventTarget {
       method: this[sMethod] || "GET",
       signal: this[sAbortController].signal,
       headers: this[sHeaders],
-      credentials: this.withCredentials ? "include" : "same-origin",
+      credentials: this.withCredentials ? "include" : undefined,
       body
     }).finally(() => {
       this.readyState = this.constructor.DONE;
